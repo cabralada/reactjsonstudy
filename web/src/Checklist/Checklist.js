@@ -14,7 +14,7 @@ const CheckList = styled.aside`
     ${ widthFlex('35%') }
 
     ul {
-        li{
+        li {
             margin-top: 10px;
             font-size: .8rem;
             line-height: 1rem;
@@ -23,11 +23,18 @@ const CheckList = styled.aside`
                 margin-top: 30px;
             }
 
-            input{
+            input {
                 margin-right: 5px;
+                &:checked {
+                    & + span{
+                        text-decoration: line-through;
+                        font-style: italic;
+                        color: rgba(0,0,0,.5)
+                    }
+                }
             }
 
-            textarea{
+            textarea {
                 ${ borderBox() }
                 resize: none;
                 border: 1px solid rgba(0,0,0,.1);
@@ -35,7 +42,6 @@ const CheckList = styled.aside`
                 border-radius: 4px;
                 width: 100%;
                 padding: 10px;
-                font-size: 1.2rem;
             }
         }
     }

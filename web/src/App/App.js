@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg'; // src={logo}
 import CheckList from '../Checklist/Checklist';
-import AppContent from '../AppContent/AppContent';
+import SearchUser from '../SearchUser/SearchUser';
 
 import { borderBox } from '../style-lib';
 import { rowFlexBox } from '../style-lib';
@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 const Principal = styled.section`
     ${ borderBox() }
+    font-family: 'Source Sans Pro', sans-serif;
 `;
 
 const MainContent = styled.section`
@@ -22,7 +23,7 @@ class App extends Component {
         <Principal>
             <MainContent>
                 <CheckList />
-                <AppContent />
+                <SearchUser />
             </MainContent>
         </Principal>
     );
