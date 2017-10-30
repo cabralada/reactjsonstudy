@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Checklist from '../Checklist/Checklist';
+import App from '../ChartLine/ChartLine';
 
 it('renders without crashing', () => {
     console.log('test')

@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/cabralada/reactjsonstudy/issues"
   },
-  "homepage": "https://github.com/cabralada/reactjsonstudy#readme"
+  "homepage": "https://github.com/cabralada/reactjsonstudy#readme",
+  "devDependencies": {}
 }

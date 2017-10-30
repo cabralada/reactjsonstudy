@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Checklist from '../Checklist/Checklist';
+import GraphRepo from '../GraphRepo/GraphRepo';
 
 it('renders without crashing', () => {
     console.log('test')

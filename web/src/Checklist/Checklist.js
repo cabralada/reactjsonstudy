@@ -11,7 +11,15 @@ const CheckList = styled.aside`
     min-height: 100vh;
 
     ${ borderBox() }
-    ${ widthFlex('35%') }
+    ${ widthFlex('25%') }
+
+    @media (max-width: 1200px) {
+      ${ widthFlex('35%') }
+    }
+
+    @media (max-width: 420px) {
+      display: none
+    }
 
     ul {
         li {
@@ -57,7 +65,7 @@ class Checklist extends Component {
                 <li>Basic version</li>
                 <li>
                     <label>
-                        <input type="checkbox" />
+                        <input checked readOnly type="checkbox" />
                         <span>
                             Create a search field with a (repo) typeahead, where user can type any github username and the search would return the list of users github repos
                         </span>
