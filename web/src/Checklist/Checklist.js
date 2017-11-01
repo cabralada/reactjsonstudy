@@ -73,7 +73,7 @@ class Checklist extends Component {
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" />
+                        <input checked readOnly type="checkbox" />
                         <span>
                             User can then select a repo from the typeahead dropdown and the app should display a graph of contributions per user for this repo (x axis users, y axis number of contributions)
                         </span>
@@ -113,7 +113,7 @@ class Checklist extends Component {
                 <li>Additional info</li>
                 <li>
                     <label>
-                        <input type="checkbox" />
+                        <input checked readOnly type="checkbox" />
                         <span>
                             API endpoints needed (repos and contributors) - e.g.:
                             <textarea defaultValue="https://api.github.com/users/angular/repos" />
@@ -171,7 +171,7 @@ class Checklist extends Component {
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" />
+                        <input checked readOnly type="checkbox" />
                         <span>The UI should be responsive</span>
                     </label>
                 </li>

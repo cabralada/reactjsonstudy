@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import classnames from 'classnames';
-import ChartLine from '../ChartLine/ChartLine';
 import ChartDoughnut from '../ChartDoughnut/ChartDoughnut';
 
 import { borderBox } from '../style-lib';
@@ -11,6 +10,7 @@ const Main = styled.section`
     ${ borderBox() }
     padding: 30px;
     border-left: 1px solid #ccc;
+    min-height: 100vh;
 
     #target{
         margin-top: 60px;
@@ -92,7 +92,10 @@ class GraphRepo extends Component {
         super(props);
         this.state = {
             repos: [],
-            active: false
+            active: false,
+            teste: '',
+            gitUsers: '',
+            gitContributions: ''
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -122,35 +125,44 @@ class GraphRepo extends Component {
         // Dropdown efföect
         document.querySelector('.selected span').innerHTML = repo.full_name;
         document.querySelector('.dropdown').scrollTop = 0;
+
+        //console.log(this.state.gitUsers)
+        //this.setState({gitUsers: repo.watchers_count})
+        this.state.gitUsers = repo.watchers_count
+        this.state.gitContributions = repo.forks_count
+        console.log(this.state.gitUsers)
     }
 
     render() {
-        const renderItems = this.state.repos.map(function(repo, i) {
-              return <li
-                        data-contributions={repo.watchers_count}
-                        data-clients={repo.watchers_count}
-                        key={i}>
-                        <span onClick={(e) => this.handleClick(repo)} className='repoName'>
-                            {repo.full_name}
-                        </span>
-                  </li>
+        let renderItems = this.state.repos.map(function(repo, i) {
+            return <li
+                data-contributions={repo.watchers_count}
+                data-clients={repo.watchers_count}
+                key={i}>
+                <span onClick={(e) => this.handleClick(repo)} className='repoName'>
+                    {repo.full_name}
+                </span>
+            </li>
         }, this);
 
         let classes = classnames('dropdown', this.state.active ? "open" : "");
-
         return (
             <Main>
                 <DropdownStyle className={classes} onClick={this.toogleClass.bind(this)}>
-                    <li className='selected'><span>Select a repo</span></li>
+                    <li className='selected'>
+                        <span>Select a repo</span>
+                    </li>
                     {renderItems}
                 </DropdownStyle>
                 <section id='target'>
-                    <div className='content'>
-                        Users: <span className='users'> 0 </span> <br />
-                        Contributions: <span className='contributions'>0</span>
-                        {/*<ChartLine />*/}
-                        <ChartDoughnut />
-                    </div>
+                    Users: <span className='users'> 0 </span> <br />
+                    Contributions: <span className='contributions'>0</span>
+                    <ChartDoughnut
+                        label={['Users', 'Contributions']}
+                        infoData={
+                            [this.state.gitUsers,this.state.gitContributions]
+                        }
+                    />
                 </section>
             </Main>
         );

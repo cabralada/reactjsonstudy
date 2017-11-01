@@ -38,8 +38,8 @@ class App extends Component {
             <MainContent>
                 <CheckList />
                 <section className='pages'>
-                    <GraphRepo />
                     <SearchUser />
+                    <GraphRepo />
                 </section>
             </MainContent>
         </Principal>
