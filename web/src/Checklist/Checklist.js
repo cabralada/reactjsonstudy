@@ -81,7 +81,7 @@ class Checklist extends Component {
                 </li>
                 <li>
                     <label>
-                        <input type="checkbox" />
+                        <input  checked readOnly type="checkbox" />
                         <span>
                             Make sure to handle the case, when username does not exist or user has no repos
                         </span>

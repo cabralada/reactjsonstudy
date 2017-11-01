@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../ChartLine/ChartLine';
+import App from '../ChartBar/ChartBar';
 
 it('renders without crashing', () => {
     console.log('test')

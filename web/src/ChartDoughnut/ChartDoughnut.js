@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import {Doughnut} from 'react-chartjs-2';
 
-
-
 class ChartDoughnut extends Component {
 	componentDidMount() {
-		console.log(this.props)
+		//console.log(this.props)
     }
 
     render() {
@@ -25,7 +23,12 @@ class ChartDoughnut extends Component {
 		};
 
         return (
-                <Doughnut data={data} />
+                <Doughnut
+					data={data}
+					options={{
+                      maintainAspectRatio: true
+                    }}
+				/>
             );
         }
 }

@@ -33,7 +33,7 @@ const UsersList = styled.ul`
         ${ widthFlex('25%') }
         position: relative;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           ${ widthFlex('50%') }
         }
 
@@ -55,12 +55,22 @@ const UsersList = styled.ul`
         }
 
         div{
+            ${ borderBox() }
             position: absolute;
             z-index: 1;
             bottom: 0;
-            left: 5%;
             height: 100%;
-            width: 90%;
+            width: 100%;
+            padding: 10px;
+
+            background: rgba(0,0,0,0);
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 40%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(40%, rgba(0,0,0,.4)));
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 40%);
+            background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 40%);
+            background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 40%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 40%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
 
             span{
                 background: white;
@@ -71,11 +81,22 @@ const UsersList = styled.ul`
                 }
 
                 &.repo{
+                    ${ borderBox() }
                     bottom: 10px;
                     word-wrap: break-word;
                     width: 100%;
                     left: 0;
-                    font-size: .8rem;
+                    font-size: 1.8rem;
+                    line-height: 2.2rem;
+                    padding: 0 10px;
+                    background: none;
+                    color: white;
+                    font-weight: bold;
+
+                    @media (max-width: 1024px) {
+                      font-size: 1.3rem;
+                      line-height: 1.6rem;
+                    }
                 }
             }
         }
@@ -83,20 +104,20 @@ const UsersList = styled.ul`
 `;
 
 class SearchUser extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      users: [],
-      search: ''
-    };
-  }
+        this.state = {
+            users: [],
+            search: ''
+        };
+    }
 
-  updateSearch(event) {
-      this.setState({
-          search: event.target.value.substr(0, 20)
-      })
-  }
+    updateSearch(event) {
+        this.setState({
+            search: event.target.value.substr(0, 20)
+        })
+    }
 
   componentDidMount() {
       let $this = this;
@@ -113,7 +134,6 @@ class SearchUser extends Component {
   }
 
   render() {
-
     // That is my filter function
     let filterUser = this.state.users.filter(
         (user) => {
@@ -127,8 +147,12 @@ class SearchUser extends Component {
         return <li key={i}>
                 <img alt={user.login} src={user.avatar_url} />
                 <div>
-                    <span className='username'>{user.login}</span>
-                    <span className='repo'>{user.repos_url}</span>
+                    <span className='username'>
+                        {user.login}
+                    </span>
+                    <span className='repo'>
+                        {user.repos_url}
+                    </span>
                 </div>
             </li>
     });

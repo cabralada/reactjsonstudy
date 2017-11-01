@@ -32,14 +32,15 @@ const MainContent = styled.section`
 `;
 
 class App extends Component {
+
   render() {
     return (
         <Principal>
             <MainContent>
                 <CheckList />
                 <section className='pages'>
-                    <SearchUser />
                     <GraphRepo />
+                    <SearchUser />
                 </section>
             </MainContent>
         </Principal>
