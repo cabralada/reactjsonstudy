@@ -1,10 +1,10 @@
-# reactjsonstudy
+# React Test with Charts.JS
 
 Try to use a **MAC** or **Linux**
 
 ## Table of Contents
 
-# Steps to Run
+Steps to Run
 	- [React install](#React install)
 	- [Start project](#Start project)
 	- [npm start](#npm-start)
