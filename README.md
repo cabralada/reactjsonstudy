@@ -1,4 +1,5 @@
-# React Test with Charts.JS
+# React with Charts.JS
+That was a test with ReactJS, GitHub API and React-Charts-2
 
 Try to use a **MAC** or **Linux**
 
