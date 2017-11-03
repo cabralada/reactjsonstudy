@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import {HorizontalBar} from 'react-chartjs-2';
 
 class ChartBar extends Component {
-    componentDidMount() {
-        console.log('props:', this.props)
-    }
-
     componentDidUpdate() {
         console.log('props:', this.props)
     }

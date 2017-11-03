@@ -32,7 +32,6 @@ const MainContent = styled.section`
 `;
 
 class App extends Component {
-
   render() {
     return (
         <Principal>

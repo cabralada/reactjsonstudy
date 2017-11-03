@@ -195,8 +195,6 @@ class GraphRepo extends Component {
             return item.login;
         });
 
-        let heightListUsers = usersByRepo.length * 40;
-
         console.log('qtd users:', usersByRepo.length);
 
         let renderItems = this.state.repos.map(function(repo, i) {
@@ -224,7 +222,6 @@ class GraphRepo extends Component {
                 <section id='target'>
                     <div className='graphs'>
                         <ChartBar
-                            height={heightListUsers}
                             legend={legendChart}
                             label={usersByRepo}
                             infoData={contributionsByRepo}
