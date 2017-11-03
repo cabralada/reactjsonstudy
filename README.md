@@ -4,14 +4,14 @@ Try to use a **MAC** or **Linux**
 
 ## Table of Contents
 
-- [React install](#React install)
-- [Start project](#Start project)
+- [React install](#react-install)
+- [Start project](#tart-project)
 - [npm start](#npm-start)
 - [Browser tests](#brower-tests)
 
 ***
 
-### `React install`
+### `react-install`
 
 - Create **Project Folder**
 - `npm start`
@@ -23,7 +23,7 @@ Try to use a **MAC** or **Linux**
 - Install **WebPack**
 	- `npm install webpack webpack-dev-server --save-dev`
 
-### `Start project`
+### `start-project`
 
 - It is a **ReactJs** project
 - To Run
