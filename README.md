@@ -4,11 +4,10 @@ Try to use a **MAC** or **Linux**
 
 ## Table of Contents
 
-Steps to Run
-	- [React install](#React install)
-	- [Start project](#Start project)
-	- [npm start](#npm-start)
-	- [Browser tests](#brower-tests)
+- [React install](#React install)
+- [Start project](#Start project)
+- [npm start](#npm-start)
+- [Browser tests](#brower-tests)
 
 ***
 
